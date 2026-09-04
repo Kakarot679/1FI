@@ -1,0 +1,284 @@
+import { ProductDetail } from '../types';
+
+/**
+ * Mock catalogue. In a real build this lives behind a service; here it is the
+ * seed data the mock API reads from. EMI plans are *derived* from variant price
+ * at request time (see emiEngine.ts) rather than stored per product.
+ */
+export const CATALOGUE: ProductDetail[] = [
+  {
+    id: 'iphone-15',
+    name: 'iPhone 15',
+    brand: 'Apple',
+    category: 'Mobiles',
+    images: [
+      'https://images.unsplash.com/photo-1592286927505-1def25e29e35?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=1200&q=80',
+    ],
+    description:
+      'A16 Bionic, a 48MP main camera and a durable colour-infused glass back. Buy it on a no-cost EMI backed by your mutual funds.',
+    highlights: [
+      '6.1" Super Retina XDR display',
+      'Dynamic Island',
+      '48MP main camera with 2x telephoto',
+      'USB-C, all-day battery',
+    ],
+    specs: [
+      { label: 'Display', value: '6.1" OLED, 60Hz' },
+      { label: 'Chip', value: 'A16 Bionic' },
+      { label: 'Rear camera', value: '48MP + 12MP' },
+      { label: 'Front camera', value: '12MP TrueDepth' },
+      { label: 'Battery', value: 'Up to 20 hrs video' },
+      { label: 'Warranty', value: '1 year Apple India' },
+    ],
+    variants: [
+      {
+        id: 'iphone-15-128-black',
+        label: '128 GB · Black',
+        attributes: { Storage: '128 GB', Colour: 'Black' },
+        price: 79900,
+        mrp: 79900,
+        inStock: true,
+      },
+      {
+        id: 'iphone-15-256-black',
+        label: '256 GB · Black',
+        attributes: { Storage: '256 GB', Colour: 'Black' },
+        price: 89900,
+        mrp: 89900,
+        inStock: true,
+      },
+      {
+        id: 'iphone-15-256-blue',
+        label: '256 GB · Blue',
+        attributes: { Storage: '256 GB', Colour: 'Blue' },
+        price: 89900,
+        mrp: 92900,
+        inStock: true,
+      },
+      {
+        id: 'iphone-15-512-blue',
+        label: '512 GB · Blue',
+        attributes: { Storage: '512 GB', Colour: 'Blue' },
+        price: 109900,
+        mrp: 109900,
+        inStock: false,
+      },
+    ],
+  },
+  {
+    id: 'macbook-air-m3',
+    name: 'MacBook Air 13" (M3)',
+    brand: 'Apple',
+    category: 'Laptops',
+    images: [
+      'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1200&q=80',
+    ],
+    description:
+      'The M3 chip brings up to 18 hours of battery life in a fanless design that stays silent under load. Spread the cost over up to 24 months.',
+    highlights: [
+      'Apple M3, 8-core CPU',
+      '13.6" Liquid Retina display',
+      'Up to 18 hrs battery life',
+      '1080p FaceTime HD camera',
+    ],
+    specs: [
+      { label: 'Chip', value: 'Apple M3 (8-core CPU)' },
+      { label: 'Display', value: '13.6" Liquid Retina' },
+      { label: 'Memory', value: '8GB / 16GB unified' },
+      { label: 'Storage', value: '256GB / 512GB SSD' },
+      { label: 'Weight', value: '1.24 kg' },
+      { label: 'Warranty', value: '1 year Apple India' },
+    ],
+    variants: [
+      {
+        id: 'mba-m3-8-256',
+        label: '8GB · 256GB',
+        attributes: { Memory: '8GB', Storage: '256GB' },
+        price: 114900,
+        mrp: 114900,
+        inStock: true,
+      },
+      {
+        id: 'mba-m3-16-512',
+        label: '16GB · 512GB',
+        attributes: { Memory: '16GB', Storage: '512GB' },
+        price: 149900,
+        mrp: 154900,
+        inStock: true,
+      },
+    ],
+  },
+  {
+    id: 'sony-wh1000xm5',
+    name: 'Sony WH-1000XM5',
+    brand: 'Sony',
+    category: 'Audio',
+    images: [
+      'https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&w=1200&q=80',
+    ],
+    description:
+      'Industry-leading noise cancellation with two processors and eight microphones. Crystal-clear calls and 30-hour battery life.',
+    highlights: [
+      'Auto NC Optimizer',
+      '30 hr battery, 3 min quick charge = 3 hrs',
+      'Multipoint connection',
+      'Speak-to-Chat',
+    ],
+    specs: [
+      { label: 'Type', value: 'Over-ear, closed' },
+      { label: 'Battery', value: 'Up to 30 hrs (NC on)' },
+      { label: 'Charging', value: 'USB-C' },
+      { label: 'Codecs', value: 'SBC, AAC, LDAC' },
+      { label: 'Weight', value: '250 g' },
+      { label: 'Warranty', value: '1 year Sony India' },
+    ],
+    variants: [
+      {
+        id: 'xm5-black',
+        label: 'Black',
+        attributes: { Colour: 'Black' },
+        price: 29990,
+        mrp: 34990,
+        inStock: true,
+      },
+      {
+        id: 'xm5-silver',
+        label: 'Silver',
+        attributes: { Colour: 'Silver' },
+        price: 29990,
+        mrp: 34990,
+        inStock: true,
+      },
+    ],
+  },
+  {
+    id: 'ather-450x',
+    name: 'Ather 450X',
+    brand: 'Ather Energy',
+    category: 'Two-wheelers',
+    images: [
+      'https://images.unsplash.com/photo-1609630875171-b1321377ee65?auto=format&fit=crop&w=1200&q=80',
+    ],
+    description:
+      'A 3.7 kWh electric scooter with a true range of 111 km and a 0-40 km/h time of 3.3s. On-road price shown for Bengaluru.',
+    highlights: [
+      '3.7 kWh battery, 111 km range',
+      'Warp mode: 0-40 in 3.3s',
+      '7" touchscreen dashboard',
+      'Fast charging support',
+    ],
+    specs: [
+      { label: 'Battery', value: '3.7 kWh' },
+      { label: 'Certified range', value: '150 km (IDC)' },
+      { label: 'Top speed', value: '90 km/h' },
+      { label: 'Charging', value: '0-80% in 4h 30m' },
+      { label: 'Kerb weight', value: '111.6 kg' },
+      { label: 'Warranty', value: '3 yrs / 30,000 km' },
+    ],
+    variants: [
+      {
+        id: 'ather-450x-27',
+        label: '2.9 kWh',
+        attributes: { Battery: '2.9 kWh', Range: '85 km' },
+        price: 138000,
+        mrp: 138000,
+        inStock: true,
+      },
+      {
+        id: 'ather-450x-37',
+        label: '3.7 kWh · Pro Pack',
+        attributes: { Battery: '3.7 kWh', Range: '111 km' },
+        price: 159000,
+        mrp: 159000,
+        inStock: true,
+      },
+    ],
+  },
+  {
+    id: 'samsung-s24',
+    name: 'Samsung Galaxy S24',
+    brand: 'Samsung',
+    category: 'Mobiles',
+    images: [
+      'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=1200&q=80',
+    ],
+    description:
+      'Galaxy AI on a 6.2" FHD+ 120Hz display, powered by Snapdragon 8 Gen 3. Circle to Search and live translate built in.',
+    highlights: [
+      '6.2" FHD+ Dynamic AMOLED 2X, 120Hz',
+      'Snapdragon 8 Gen 3 for Galaxy',
+      '50MP triple camera',
+      '7 years of OS updates',
+    ],
+    specs: [
+      { label: 'Display', value: '6.2" AMOLED, 120Hz' },
+      { label: 'Chip', value: 'Snapdragon 8 Gen 3' },
+      { label: 'Rear camera', value: '50MP + 12MP + 10MP' },
+      { label: 'Battery', value: '4000 mAh, 25W' },
+      { label: 'IP rating', value: 'IP68' },
+      { label: 'Warranty', value: '1 year Samsung India' },
+    ],
+    variants: [
+      {
+        id: 's24-8-128',
+        label: '8GB · 128GB',
+        attributes: { Memory: '8GB', Storage: '128GB' },
+        price: 74999,
+        mrp: 79999,
+        inStock: true,
+      },
+      {
+        id: 's24-8-256',
+        label: '8GB · 256GB',
+        attributes: { Memory: '8GB', Storage: '256GB' },
+        price: 79999,
+        mrp: 84999,
+        inStock: true,
+      },
+    ],
+  },
+  {
+    id: 'dyson-v12',
+    name: 'Dyson V12 Detect Slim',
+    brand: 'Dyson',
+    category: 'Home',
+    images: [
+      'https://images.unsplash.com/photo-1558317374-067fb5f30001?auto=format&fit=crop&w=1200&q=80',
+    ],
+    description:
+      'A laser reveals microscopic dust and a piezo sensor counts particles as you clean. Up to 60 minutes of fade-free suction.',
+    highlights: [
+      'Laser dust detection',
+      'Up to 60 min run time',
+      'Acoustically engineered, quieter',
+      'LCD shows particle count',
+    ],
+    specs: [
+      { label: 'Run time', value: 'Up to 60 min' },
+      { label: 'Bin volume', value: '0.35 L' },
+      { label: 'Filtration', value: 'Whole-machine HEPA' },
+      { label: 'Weight', value: '2.2 kg' },
+      { label: 'Charge time', value: '4 hours' },
+      { label: 'Warranty', value: '2 years Dyson India' },
+    ],
+    variants: [
+      {
+        id: 'v12-standard',
+        label: 'Standard kit',
+        attributes: { Kit: 'Standard' },
+        price: 45900,
+        mrp: 52900,
+        inStock: true,
+      },
+      {
+        id: 'v12-absolute',
+        label: 'Absolute kit',
+        attributes: { Kit: 'Absolute' },
+        price: 54900,
+        mrp: 62900,
+        inStock: false,
+      },
+    ],
+  },
+];
