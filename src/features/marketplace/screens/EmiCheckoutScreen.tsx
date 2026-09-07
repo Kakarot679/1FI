@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { Image, ScrollView, StyleSheet, View } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import {
   AppText,
@@ -11,7 +11,7 @@ import {
 import { colors, spacing } from '../../../theme';
 import { ShopStackParamList } from '../../../navigation/types';
 import { formatMoney } from '../../../lib/format';
-import { EmiPlanCard, ScreenHeaderBar, StickyFooter } from '../components';
+import { EmiPlanCard, ProductArt, ScreenHeaderBar, StickyFooter } from '../components';
 import { useProduct } from '../hooks/useProduct';
 import { useEmiQuote } from '../hooks/useEmiQuote';
 import { findPlan, findVariant, pickDefaultPlan } from '../lib/selectors';
@@ -80,7 +80,7 @@ export function EmiCheckoutScreen({ route, navigation }: Props) {
       >
         <Card style={styles.summary} padded={false}>
           <View style={styles.summaryRow}>
-            <Image source={{ uri: product.images[0] }} style={styles.thumb} />
+            <ProductArt art={product.art} size={64} rounded={12} />
             <View style={styles.summaryBody}>
               <AppText variant="bodyStrong" numberOfLines={1}>
                 {product.name}
@@ -151,12 +151,6 @@ const styles = StyleSheet.create({
   content: { paddingHorizontal: spacing.gutter, paddingBottom: spacing.xxxl },
   summary: { padding: spacing.md },
   summaryRow: { flexDirection: 'row', padding: spacing.md },
-  thumb: {
-    width: 64,
-    height: 64,
-    borderRadius: 12,
-    backgroundColor: colors.cardMuted,
-  },
   summaryBody: { flex: 1, marginLeft: spacing.md, justifyContent: 'center' },
   summaryPrice: { marginTop: spacing.xs },
   sectionLabel: { marginTop: spacing.xl },

@@ -1,8 +1,9 @@
-import { Image, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { AppText, Badge, Card } from '../../../components';
 import { colors, spacing } from '../../../theme';
 import { discountPercent, formatMoneyCompact, formatPerMonth } from '../../../lib/format';
 import { ProductSummary } from '../types';
+import { ProductArt } from './ProductArt';
 
 interface ProductCardProps {
   product: ProductSummary;
@@ -15,9 +16,8 @@ export function ProductCard({ product, onPress }: ProductCardProps) {
   return (
     <Card onPress={onPress} style={styles.card} padded={false}>
       <View style={styles.row}>
-        <View style={styles.imageWrap}>
-          <Image source={{ uri: product.thumbnail }} style={styles.image} resizeMode="cover" />
-        </View>
+        <ProductArt art={product.art} size={96} />
+
 
         <View style={styles.body}>
           <AppText variant="caption" color={colors.inkMuted}>
@@ -70,14 +70,6 @@ export function ProductCard({ product, onPress }: ProductCardProps) {
 const styles = StyleSheet.create({
   card: { marginBottom: spacing.md },
   row: { flexDirection: 'row', padding: spacing.md },
-  imageWrap: {
-    width: 96,
-    height: 96,
-    borderRadius: 14,
-    backgroundColor: colors.cardMuted,
-    overflow: 'hidden',
-  },
-  image: { width: '100%', height: '100%' },
   body: { flex: 1, marginLeft: spacing.md },
   name: { marginTop: 2 },
   priceRow: {

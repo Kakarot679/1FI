@@ -1,6 +1,7 @@
 export { CategoryChips } from './CategoryChips';
 export { EmiPlanCard } from './EmiPlanCard';
-export { ImageCarousel } from './ImageCarousel';
+export { ProductArt } from './ProductArt';
+export { ProductHero } from './ProductHero';
 export { MarketplacePanel } from './MarketplacePanel';
 export { PriceBlock } from './PriceBlock';
 export { ProductCard } from './ProductCard';

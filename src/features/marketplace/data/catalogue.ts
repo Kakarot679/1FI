@@ -11,10 +11,7 @@ export const CATALOGUE: ProductDetail[] = [
     name: 'iPhone 15',
     brand: 'Apple',
     category: 'Mobiles',
-    images: [
-      'https://images.unsplash.com/photo-1592286927505-1def25e29e35?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=1200&q=80',
-    ],
+    art: 'phone',
     description:
       'A16 Bionic, a 48MP main camera and a durable colour-infused glass back. Buy it on a no-cost EMI backed by your mutual funds.',
     highlights: [
@@ -71,9 +68,7 @@ export const CATALOGUE: ProductDetail[] = [
     name: 'MacBook Air 13" (M3)',
     brand: 'Apple',
     category: 'Laptops',
-    images: [
-      'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1200&q=80',
-    ],
+    art: 'laptop',
     description:
       'The M3 chip brings up to 18 hours of battery life in a fanless design that stays silent under load. Spread the cost over up to 24 months.',
     highlights: [
@@ -114,9 +109,7 @@ export const CATALOGUE: ProductDetail[] = [
     name: 'Sony WH-1000XM5',
     brand: 'Sony',
     category: 'Audio',
-    images: [
-      'https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&w=1200&q=80',
-    ],
+    art: 'headphones',
     description:
       'Industry-leading noise cancellation with two processors and eight microphones. Crystal-clear calls and 30-hour battery life.',
     highlights: [
@@ -157,9 +150,7 @@ export const CATALOGUE: ProductDetail[] = [
     name: 'Ather 450X',
     brand: 'Ather Energy',
     category: 'Two-wheelers',
-    images: [
-      'https://images.unsplash.com/photo-1609630875171-b1321377ee65?auto=format&fit=crop&w=1200&q=80',
-    ],
+    art: 'scooter',
     description:
       'A 3.7 kWh electric scooter with a true range of 111 km and a 0-40 km/h time of 3.3s. On-road price shown for Bengaluru.',
     highlights: [
@@ -200,9 +191,7 @@ export const CATALOGUE: ProductDetail[] = [
     name: 'Samsung Galaxy S24',
     brand: 'Samsung',
     category: 'Mobiles',
-    images: [
-      'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=1200&q=80',
-    ],
+    art: 'phone',
     description:
       'Galaxy AI on a 6.2" FHD+ 120Hz display, powered by Snapdragon 8 Gen 3. Circle to Search and live translate built in.',
     highlights: [
@@ -243,9 +232,7 @@ export const CATALOGUE: ProductDetail[] = [
     name: 'Dyson V12 Detect Slim',
     brand: 'Dyson',
     category: 'Home',
-    images: [
-      'https://images.unsplash.com/photo-1558317374-067fb5f30001?auto=format&fit=crop&w=1200&q=80',
-    ],
+    art: 'vacuum',
     description:
       'A laser reveals microscopic dust and a piezo sensor counts particles as you clean. Up to 60 minutes of fade-free suction.',
     highlights: [

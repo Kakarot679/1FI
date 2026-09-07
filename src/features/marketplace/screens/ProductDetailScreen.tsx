@@ -12,8 +12,8 @@ import { colors, spacing } from '../../../theme';
 import { ShopStackParamList } from '../../../navigation/types';
 import { formatPerMonth } from '../../../lib/format';
 import {
-  ImageCarousel,
   PriceBlock,
+  ProductHero,
   ScreenHeaderBar,
   SpecList,
   StickyFooter,
@@ -72,7 +72,7 @@ export function ProductDetailScreen({ route, navigation }: Props) {
         contentContainerStyle={styles.content}
         showsVerticalScrollIndicator={false}
       >
-        <ImageCarousel images={product.images} />
+        <ProductHero art={product.art} />
 
         <View style={styles.header}>
           <AppText variant="caption" color={colors.inkMuted}>
