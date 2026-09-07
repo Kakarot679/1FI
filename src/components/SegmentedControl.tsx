@@ -1,5 +1,4 @@
-import { useMemo } from 'react';
-import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
+import { Pressable, StyleSheet, View } from 'react-native';
 import { colors, radius, spacing } from '../theme';
 import { AppText } from './AppText';
 
@@ -17,18 +16,16 @@ interface SegmentedControlProps<T extends string> {
 /**
  * The light-purple track with a white active pill + purple underline,
  * matching the "Top Brands / Nearby Stores" switch on the Shop page.
- * Scrolls horizontally once a third segment is added.
+ * Segments share the width equally.
  */
 export function SegmentedControl<T extends string>({
   options,
   value,
   onChange,
 }: SegmentedControlProps<T>) {
-  const scrollable = options.length > 2;
-
-  const body = useMemo(
-    () =>
-      options.map((option) => {
+  return (
+    <View style={styles.track}>
+      {options.map((option) => {
         const active = option.value === value;
         return (
           <Pressable
@@ -36,33 +33,21 @@ export function SegmentedControl<T extends string>({
             accessibilityRole="tab"
             accessibilityState={{ selected: active }}
             onPress={() => onChange(option.value)}
-            style={[styles.segment, active && styles.segmentActive, scrollable && styles.segmentFlexible]}
+            style={[styles.segment, active && styles.segmentActive]}
           >
             <AppText
               variant="bodyStrong"
+              numberOfLines={1}
               color={active ? colors.primary : colors.inkSubtle}
+              style={styles.label}
             >
               {option.label}
             </AppText>
             {active ? <View style={styles.underline} /> : null}
           </Pressable>
         );
-      }),
-    [options, value, scrollable, onChange],
-  );
-
-  if (!scrollable) {
-    return <View style={styles.track}>{body}</View>;
-  }
-
-  return (
-    <ScrollView
-      horizontal
-      showsHorizontalScrollIndicator={false}
-      contentContainerStyle={styles.trackScroll}
-    >
-      {body}
-    </ScrollView>
+      })}
+    </View>
   );
 }
 
@@ -71,29 +56,23 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: colors.primarySoft,
     borderRadius: radius.pill,
-    padding: 6,
-  },
-  trackScroll: {
-    flexDirection: 'row',
-    backgroundColor: colors.primarySoft,
-    borderRadius: radius.pill,
-    padding: 6,
+    padding: 5,
   },
   segment: {
     flex: 1,
-    minHeight: 44,
+    minHeight: 42,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: radius.pill,
-    paddingHorizontal: spacing.lg,
+    paddingHorizontal: spacing.sm,
   },
-  segmentFlexible: { flex: 0, paddingHorizontal: spacing.xl },
   segmentActive: {
     backgroundColor: colors.card,
   },
+  label: { fontSize: 13 },
   underline: {
     marginTop: 3,
-    width: 22,
+    width: 20,
     height: 2,
     borderRadius: 2,
     backgroundColor: colors.primary,

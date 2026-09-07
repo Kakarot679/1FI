@@ -15,7 +15,7 @@ type ShopSection = 'brands' | 'nearby' | 'marketplace';
 const SECTIONS: SegmentOption<ShopSection>[] = [
   { value: 'brands', label: 'Top Brands' },
   { value: 'nearby', label: 'Nearby Stores' },
-  { value: 'marketplace', label: '1Fi Marketplace' },
+  { value: 'marketplace', label: 'Marketplace' },
 ];
 
 // Space for the floating tab bar so content never sits under it.
