@@ -1,15 +1,15 @@
 // Domain models for the 1Fi Marketplace.
 // These mirror the shape a real catalogue/EMI service would return.
 
-import type { ProductArtKey } from './components/ProductArt';
+import type { ProductImageKey } from './assets/images';
 
 export interface ProductSummary {
   id: string;
   name: string;
   brand: string;
   category: string;
-  /** Key into the bundled vector artwork set. A real API would send image URLs. */
-  art: ProductArtKey;
+  /** Key into the bundled product imagery. A real API would send image URLs. */
+  imageKey: ProductImageKey;
   /** Lowest price across variants, in paise-free rupees. */
   startingPrice: number;
   mrp: number;
@@ -39,7 +39,7 @@ export interface ProductDetail {
   name: string;
   brand: string;
   category: string;
-  art: ProductArtKey;
+  imageKey: ProductImageKey;
   description: string;
   highlights: string[];
   specs: ProductSpec[];

@@ -13,7 +13,7 @@ import { ShopStackParamList } from '../../../navigation/types';
 import { formatPerMonth } from '../../../lib/format';
 import {
   PriceBlock,
-  ProductHero,
+  ProductImage,
   ScreenHeaderBar,
   SpecList,
   StickyFooter,
@@ -72,7 +72,9 @@ export function ProductDetailScreen({ route, navigation }: Props) {
         contentContainerStyle={styles.content}
         showsVerticalScrollIndicator={false}
       >
-        <ProductHero art={product.art} />
+        <View style={styles.hero}>
+          <ProductImage imageKey={product.imageKey} fill />
+        </View>
 
         <View style={styles.header}>
           <AppText variant="caption" color={colors.inkMuted}>
@@ -173,6 +175,7 @@ export function ProductDetailScreen({ route, navigation }: Props) {
 const styles = StyleSheet.create({
   screen: { flex: 1, backgroundColor: colors.screen },
   content: { paddingHorizontal: spacing.gutter, paddingBottom: spacing.xxxl },
+  hero: { aspectRatio: 1.3, marginTop: spacing.xs },
   header: { marginTop: spacing.xl },
   name: { marginTop: spacing.xs },
   block: { marginTop: spacing.xl },

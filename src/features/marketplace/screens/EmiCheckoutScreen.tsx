@@ -11,7 +11,7 @@ import {
 import { colors, spacing } from '../../../theme';
 import { ShopStackParamList } from '../../../navigation/types';
 import { formatMoney } from '../../../lib/format';
-import { EmiPlanCard, ProductArt, ScreenHeaderBar, StickyFooter } from '../components';
+import { EmiPlanCard, ProductImage, ScreenHeaderBar, StickyFooter } from '../components';
 import { useProduct } from '../hooks/useProduct';
 import { useEmiQuote } from '../hooks/useEmiQuote';
 import { findPlan, findVariant, pickDefaultPlan } from '../lib/selectors';
@@ -80,7 +80,7 @@ export function EmiCheckoutScreen({ route, navigation }: Props) {
       >
         <Card style={styles.summary} padded={false}>
           <View style={styles.summaryRow}>
-            <ProductArt art={product.art} size={64} rounded={12} />
+            <ProductImage imageKey={product.imageKey} size={64} rounded={12} />
             <View style={styles.summaryBody}>
               <AppText variant="bodyStrong" numberOfLines={1}>
                 {product.name}

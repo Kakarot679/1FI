@@ -46,7 +46,7 @@ function toSummary(product: ProductDetail): ProductSummary {
     name: product.name,
     brand: product.brand,
     category: product.category,
-    art: product.art,
+    imageKey: product.imageKey,
     startingPrice: cheapest.price,
     mrp: cheapest.mrp,
     lowestEmiPerMonth: emiPlan.monthlyAmount,

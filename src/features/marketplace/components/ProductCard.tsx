@@ -3,7 +3,7 @@ import { AppText, Badge, Card } from '../../../components';
 import { colors, spacing } from '../../../theme';
 import { discountPercent, formatMoneyCompact, formatPerMonth } from '../../../lib/format';
 import { ProductSummary } from '../types';
-import { ProductArt } from './ProductArt';
+import { ProductImage } from './ProductImage';
 
 interface ProductCardProps {
   product: ProductSummary;
@@ -16,7 +16,7 @@ export function ProductCard({ product, onPress }: ProductCardProps) {
   return (
     <Card onPress={onPress} style={styles.card} padded={false}>
       <View style={styles.row}>
-        <ProductArt art={product.art} size={96} />
+        <ProductImage imageKey={product.imageKey} size={96} />
 
 
         <View style={styles.body}>
